@@ -1,0 +1,20 @@
+{
+  "sendNotification": true,
+  "notificationAddresses": [
+    "damiano.oldoni@inbo.be"
+  ],
+  "format": "SQL_TSV_ZIP",
+  "sql": "
+  SELECT
+    datasetKey, 
+    countryCode,
+    COUNT(*)
+  FROM 
+    occurrence 
+  WHERE 
+    continent = 'EUROPE'
+  GROUP BY 
+    datasetKey,
+    countryCode
+  "
+}
