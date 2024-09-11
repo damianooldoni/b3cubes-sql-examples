@@ -18,7 +18,7 @@ The very [first example](https://techdocs.gbif.org/en/data-use/api-sql-downloads
 curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request
 ```
 
-Notice that you can give another name than `query.json` to the file containing the SQL query. So, if you cloned this repository and are in folder `./examples/examples_gbif`, you can replace `@query.json` with `@[other_name_than_query.json](https://github.com/damianooldoni/b3cubes-sql-examples/blob/main/examples/examples_gbif/other_name_than_query.json)` and the same download will be triggered again: a "cube" with the number of occurrences from Europe per dataset and country will be generated again, with a new DOI and `downloadKey`:
+Notice that you can give another name than `query.json` to the file containing the SQL query, i.e. [`other_name_than_query.json`]((https://github.com/damianooldoni/b3cubes-sql-examples/blob/main/examples/examples_gbif/other_name_than_query.json)). So, if you cloned this repository and are in folder `./examples/examples_gbif`, you can replace `@query.json` with `@other_name_than_query.json` and the same download will be triggered again: a "cube" with the number of occurrences from Europe per dataset and country will be generated again, with a new DOI and `downloadKey`:
 
 ```
 curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @other_name_than_query.json https://api.gbif.org/v1/occurrence/download/request
