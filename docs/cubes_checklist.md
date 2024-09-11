@@ -58,7 +58,7 @@ WHERE
 	level1gid = 'BEL.2_1' -- Flanders region (Vlaanderen)
 ```
 
-See json query, `/templates/other_examples/gdam_id_vlaanderen.json` and the resulting cube to [download](https://doi.org/10.15468/dl.8ckvqu). Notice that for provinces, the right GBIF term will be `level2gid`, for example `level2gid = 'BEL.2.5_1'` for West-Flanders. Maybe useful to know that you can download data for each country at each administrative level via https://gadm.org/download_country.html.
+See json query, `/examples/other_examples/gdam_id_vlaanderen.json` and the resulting cube to [download](https://doi.org/10.15468/dl.8ckvqu). Notice that for provinces, the right GBIF term will be `level2gid`, for example `level2gid = 'BEL.2.5_1'` for West-Flanders. Maybe useful to know that you can download data for each country at each administrative level via https://gadm.org/download_country.html.
 
 - by polygon:
 
@@ -69,7 +69,7 @@ WHERE
 	 GBIF_Within('POLYGON ((3.959198 51.056934, 3.886414 51.016347, 3.944092 50.976588, 4.000397 50.91429, 4.159698 50.929007, 4.128113 51.031895, 4.096527 51.074194, 3.959198 51.056934))')
 ```
 
-See json query, `/templates/other_examples/polygon.json` and the resulting cube to [download](https://doi.org/10.15468/dl.7vh5y7). Polygon created by geopick, https://geopick.gbif.org/?locationid=geopick-v2.1.0-2024-09-04T13-00-23.219Z-132.
+See json query, `/examples/other_examples/polygon.json` and the resulting cube to [download](https://doi.org/10.15468/dl.7vh5y7). Polygon created by geopick, https://geopick.gbif.org/?locationid=geopick-v2.1.0-2024-09-04T13-00-23.219Z-132.
 
 ### Quality filters
 

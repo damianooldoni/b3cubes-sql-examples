@@ -18,7 +18,7 @@ The very [first example](https://techdocs.gbif.org/en/data-use/api-sql-downloads
 curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request
 ```
 
-Notice that you can give another name than `query.json` to the file containing the SQL query. So, if you cloned this repository and are in folder `./templates/examples_gbif`, you can replace `@query.json` with `@other_name_than_query.json`  and the same download will be triggered again: a "cube" with the number of occurrences from Europe per dataset and country will be generated again, with a new DOI and `downloadKey`:
+Notice that you can give another name than `query.json` to the file containing the SQL query. So, if you cloned this repository and are in folder `./examples/examples_gbif`, you can replace `@query.json` with `@other_name_than_query.json`  and the same download will be triggered again: a "cube" with the number of occurrences from Europe per dataset and country will be generated again, with a new DOI and `downloadKey`:
 
 ```
 curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @other_name_than_query.json https://api.gbif.org/v1/occurrence/download/request
@@ -26,10 +26,10 @@ curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: a
 
 Tip: use always a **meaningful filename**. `query.json` is good for a first test, but not more than that :-) 
 
-Notice also that you can generate the same download by running the curl commands from another directory. For example, if you are in the root directory of this gitHub repository and you are on a Windows machine, using `@templates\examples_gbif\query.json` in the curl command will do the job:
+Notice also that you can generate the same download by running the curl commands from another directory. For example, if you are in the root directory of this gitHub repository and you are on a Windows machine, using `@examples\examples_gbif\query.json` in the curl command will do the job:
 
 ```
-curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @templates\examples_gbif\query.json https://api.gbif.org/v1/occurrence/download/request
+curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @examples\examples_gbif\query.json https://api.gbif.org/v1/occurrence/download/request
 ```
 
 As shown on GBIF documentation page, you can make use of the [Query Validation](https://techdocs.gbif.org/en/data-use/api-sql-downloads#sql-validation) tool, before triggering a download. Handy, isn't?
@@ -43,10 +43,10 @@ You can run your first species occurrence cube by slightly manipulating the fina
 - Replace double quotes, `"`, with `\"`, e.g. `\"year\"`.
 - Remove comments, e.g. `-- Dimensions:`
 
-You can find the final json file, `cube_test.json`, in `templates/examples_gbif` directory. Submit the request as we did it before:
+You can find the final json file, `cube_test.json`, in `examples/examples_gbif` directory. Submit the request as we did it before:
 
 ```
-curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @templates\examples_gbif\cube_test.json https://api.gbif.org/v1/occurrence/download/request
+curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @examples\examples_gbif\cube_test.json https://api.gbif.org/v1/occurrence/download/request
 ```
 
 I also asked to add the final adjusted query to the [Species occurrence cubes](https://techdocs.gbif.org/en/data-use/data-cubes) page, see issue [tech-docs#97](https://github.com/gbif/tech-docs/issues/97).
