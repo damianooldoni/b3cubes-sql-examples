@@ -12,19 +12,19 @@ Check the following:
 
 ## Your first API SQL Download
 
-The very [first example](https://techdocs.gbif.org/en/data-use/api-sql-downloads#requesting-an-sql-occurrence-download) as provided by GBIF should work fine. In the _curl_ command, just replace `YOUR_GBIF_USERNAME` and `YOUR_PASSWORD` with your credentials. In the `query.json` file, please replace `"userEmail@example.org"` with your email address, or remove the `notificationAddresses` and set `"sendNotification": false`.
+The very [first example](https://techdocs.gbif.org/en/data-use/api-sql-downloads#requesting-an-sql-occurrence-download) as provided by GBIF should work fine. In the _curl_ command, just replace `YOUR_GBIF_USERNAME` and `YOUR_PASSWORD` with your credentials. In the [`query.json`](https://github.com/damianooldoni/b3cubes-sql-examples/blob/main/examples/examples_gbif/query.json) file, please replace `"userEmail@example.org"` with your email address, or remove the `notificationAddresses` and set `"sendNotification": false`.
 
 ```
 curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @query.json https://api.gbif.org/v1/occurrence/download/request
 ```
 
-Notice that you can give another name than `query.json` to the file containing the SQL query. So, if you cloned this repository and are in folder `./examples/examples_gbif`, you can replace `@query.json` with `@other_name_than_query.json`  and the same download will be triggered again: a "cube" with the number of occurrences from Europe per dataset and country will be generated again, with a new DOI and `downloadKey`:
+Notice that you can give another name than `query.json` to the file containing the SQL query. So, if you cloned this repository and are in folder `./examples/examples_gbif`, you can replace `@query.json` with `@[other_name_than_query.json](https://github.com/damianooldoni/b3cubes-sql-examples/blob/main/examples/examples_gbif/other_name_than_query.json)` and the same download will be triggered again: a "cube" with the number of occurrences from Europe per dataset and country will be generated again, with a new DOI and `downloadKey`:
 
 ```
 curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @other_name_than_query.json https://api.gbif.org/v1/occurrence/download/request
 ```
 
-Tip: use always a **meaningful filename**. `query.json` is good for a first test, but not more than that :-) 
+Tip: use always a **meaningful filename**. `query.json` is good for a first test, but not more than that :-)
 
 Notice also that you can generate the same download by running the curl commands from another directory. For example, if you are in the root directory of this gitHub repository and you are on a Windows machine, using `@examples\examples_gbif\query.json` in the curl command will do the job:
 
@@ -43,7 +43,7 @@ You can run your first species occurrence cube by slightly manipulating the fina
 - Replace double quotes, `"`, with `\"`, e.g. `\"year\"`.
 - Remove comments, e.g. `-- Dimensions:`
 
-You can find the final json file, `cube_test.json`, in `examples/examples_gbif` directory. Submit the request as we did it before:
+You can find the final json file, [`cube_test.json`](https://github.com/damianooldoni/b3cubes-sql-examples/blob/main/examples/examples_gbif/cube_test.json), in [`examples/examples_gbif`](https://github.com/damianooldoni/b3cubes-sql-examples/tree/main/examples/examples_gbif) directory. Submit the request as we did it before:
 
 ```
 curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @examples\examples_gbif\cube_test.json https://api.gbif.org/v1/occurrence/download/request
