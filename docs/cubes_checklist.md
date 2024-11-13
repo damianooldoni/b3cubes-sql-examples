@@ -128,7 +128,7 @@ The only way is triggering an occurrence download and going through all the poss
 Step 3 can be very easy or quite complex, depending on the taxa in the checklists. There are three factors to be considered: taxon match, taxonomic status (accepted, synonym) and taxonomic rank.
 
 1. A taxon in the checklist has **no match** with the GBIF Backbone: it is very unlikely to have occurrences linked to them, see Section "Get taxa from checklists and match to GBIF Backbone" above. Most of the time a match can be found by adding/improving the authorship of the scientific names.
-2. The matched taxon is a **synonym** (`taxonomicStatus`: `HETEROTYPIC_SYNONYM`, `HOMOTYPIC_SYNONYM`, `PROPARTE_SYNONYM`, `SYNONYM`): searching occurrences of a synonym will result in less occurrences than the accepted. Only use the taxon key of the synonym if you have strong doubts about the match proposed by the GBIF Backbone. In this case, your SQL query for that specific taxon will look like this:
+2. The matched taxon is a **synonym** (`taxonomicStatus`: `HETEROTYPIC_SYNONYM`, `HOMOTYPIC_SYNONYM`, `PROPARTE_SYNONYM`, `SYNONYM`): searching occurrences of a synonym will result in less occurrences than the accepted. Only use the taxon key of the synonym if you have strong doubts about the match proposed by the GBIF Backbone. In this case, the SQL query for that specific taxon will look like this:
 ```sql
 WHERE
 	taxonKey = your_taxon_key
@@ -152,7 +152,7 @@ GROUP BY
 	species
 ```
 
-	- filtering and grouping occurrences by the given rank. You will need to build an ad-hoc cube for it by writing a specific JSON query file for looking like:
+	- filtering and grouping occurrences by the given rank. The SQL query for that specific taxon, e.g. a genus, will look like this:
 
 ```sql
 WHERE
@@ -164,7 +164,7 @@ GROUP BY
 	genus
 ```
 
-3. The matched taxon has a **lower taxonomic rank** than species (subspecies, variety, form). You need to trigger an occurrence cube at `taxonKey` level. Your SQL query will look like this:
+3. The matched taxon has a **lower taxonomic rank** than species (subspecies, variety, form). We need to work at `taxonKey` level. The SQL query will look like this:
 ```sql
 WHERE
 	taxonKey = your_taxon_key
