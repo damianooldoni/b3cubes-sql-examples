@@ -138,8 +138,7 @@ GROUP BY
 	taxonKey,
 	scientificName -- eventually `canonicalName`
 ```
-3. The matched taxon has an **higher taxonomic rank** than species, e.g. genus. You have two options depending on your needs:
-	- grouping occurrences by species as typically done. The SQL query will look like this:
+3. The matched taxon has an **higher taxonomic rank** than species, e.g. genus. You have two options depending on your needs. Either you group occurrences by species as typically done or you filter and groupi occurrences by the given rank. The two queries will look like this:
 
 ```sql
 ...
@@ -152,9 +151,8 @@ GROUP BY
 	species
 ```
 
-	- filtering and grouping occurrences by the given rank. The SQL query for that specific taxon, e.g. a genus, will look like this:
-
 ```sql
+...
 WHERE
 	genusKey = your_genus_key
 	...
@@ -164,7 +162,7 @@ GROUP BY
 	genus
 ```
 
-3. The matched taxon has a **lower taxonomic rank** than species (subspecies, variety, form). We need to work at `taxonKey` level. The SQL query will look like this:
+4. The matched taxon has a **lower taxonomic rank** than species (subspecies, variety, form). We need to work at `taxonKey` level. The SQL query will look like this:
 ```sql
 WHERE
 	taxonKey = your_taxon_key
