@@ -43,7 +43,7 @@ You can run your first species occurrence cube by slightly manipulating the fina
 - Replace double quotes, `"`, with `\"`, e.g. `\"year\"`.
 - Remove comments, e.g. `-- Dimensions:`
 
-You can find the final json file, [`cube_test.json`](https://github.com/damianooldoni/b3cubes-sql-examples/blob/main/examples/examples_gbif/cube_test.json), in [`examples/examples_gbif`](https://github.com/damianooldoni/b3cubes-sql-examples/tree/main/examples/examples_gbif) directory. Submit the request as we did it before:
+You can find the final json file, [`cube_test.json`](examples/examples_gbif/cube_test.json), in [`examples/examples_gbif`](https://github.com/damianooldoni/b3cubes-sql-examples/tree/main/examples/examples_gbif) directory. Submit the request as we did it before:
 
 ```
 curl --include --user YOUR_GBIF_USERNAME:YOUR_PASSWORD --header "Content-Type: application/json" --data @examples\examples_gbif\cube_test.json https://api.gbif.org/v1/occurrence/download/request
