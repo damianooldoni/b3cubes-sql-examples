@@ -138,7 +138,7 @@ GROUP BY
 	taxonKey,
 	scientificName -- eventually `canonicalName`
 ```
-3. The matched taxon has an **higher taxonomic rank** than species, e.g. genus. You have two options depending on your needs. Either you group occurrences by species as typically done or you filter and groupi occurrences by the given rank. The two queries will look like this:
+3. The matched taxon has an **higher taxonomic rank** than species, e.g. genus. You have two options depending on your needs. Either you group occurrences by species as typically done or you filter and group occurrences by the given rank. The two queries will look like this:
 
 ```sql
 ...
