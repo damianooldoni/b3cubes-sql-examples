@@ -151,7 +151,9 @@ GROUP BY
 	speciesKey,
 	species
 ```
+
 	- filtering and grouping occurrences by the given rank. You will need to build an ad-hoc cube for it by writing a specific JSON query file for looking like:
+
 ```sql
 WHERE
 	genusKey = your_genus_key
